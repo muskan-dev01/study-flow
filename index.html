@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudyFlow | Student Productivity Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            Study<span>Flow</span>
+        </div>
+
+        <p class="sidebar-label">WORKSPACE</p>
+
+        <nav>
+            <a href="#dashboard" class="active">⌂ <span>Dashboard</span></a>
+            <a href="#subjects">▣ <span>Subjects</span></a>
+            <a href="#tasks">✓ <span>Tasks</span></a>
+            <a href="#timer">◷ <span>Focus Timer</span></a>
+            <a href="#progress">◉ <span>Progress</span></a>
+            <a href="#note">✎ <span>Notes</span></a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <button id="themeBtn">☀ Change Theme</button>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main-content" id="dashboard">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div>
+                <p class="small-text">STUDENT PRODUCTIVITY</p>
+                <h1>Welcome back! <span>♡</span></h1>
+                <p class="welcome-text">
+                    Stay focused, stay organized, and make progress every day.
+                </p>
+            </div>
+
+            <div class="date-box">
+                <span>Today</span>
+                <strong id="currentDate"></strong>
+            </div>
+
+        </header>
+
+
+        <!-- STATS -->
+        <section class="stats">
+
+            <div class="stat-card">
+                <div class="stat-icon">📚</div>
+                <div>
+                    <p>Total Subjects</p>
+                    <h2 id="subjectCount">0</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">✓</div>
+                <div>
+                    <p>Tasks Completed</p>
+                    <h2 id="completedCount">0</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">⏱</div>
+                <div>
+                    <p>Focus Sessions</p>
+                    <h2 id="sessionCount">0</h2>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- MAIN GRID -->
+        <section class="dashboard-grid">
+
+            <!-- TASKS -->
+            <div class="card tasks-card" id="tasks">
+
+                <div class="card-heading">
+
+                    <div>
+                        <p class="small-text">PRODUCTIVITY</p>
+                        <h2>Today's Tasks</h2>
+                    </div>
+
+                    <button id="addTaskBtn" class="primary-btn">
+                        + Add Task
+                    </button>
+
+                </div>
+
+                <div id="taskContainer">
+
+                    <div class="empty-state">
+                        <div>📝</div>
+                        <p>No tasks yet</p>
+                        <span>Add your first study task.</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TIMER -->
+            <div class="card timer-card" id="timer">
+
+                <p class="small-text">DEEP WORK</p>
+                <h2>Focus Timer</h2>
+
+                <div class="timer-circle">
+                    <div class="timer-inner">
+                        <span id="timerDisplay">25:00</span>
+                        <small>FOCUS</small>
+                    </div>
+                </div>
+
+                <div class="timer-buttons">
+                    <button id="startBtn" class="primary-btn">
+                        Start
+                    </button>
+
+                    <button id="resetBtn" class="secondary-btn">
+                        Reset
+                    </button>
+                </div>
+
+                <p class="timer-status" id="timerStatus">
+                    Ready to focus ✨
+                </p>
+
+            </div>
+
+
+            <!-- SUBJECTS -->
+            <div class="card subjects-card" id="subjects">
+
+                <div class="card-heading">
+
+                    <div>
+                        <p class="small-text">YOUR LEARNING</p>
+                        <h2>Subjects</h2>
+                    </div>
+
+                    <button id="addSubjectBtn" class="primary-btn">
+                        + Add Subject
+                    </button>
+
+                </div>
+
+                <div id="subjectContainer">
+
+                    <div class="empty-state">
+                        <div>📚</div>
+                        <p>No subjects yet</p>
+                        <span>Add your first subject.</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROGRESS -->
+            <div class="card progress-card" id="progress">
+
+                <div class="card-heading">
+
+                    <div>
+                        <p class="small-text">YOUR PERFORMANCE</p>
+                        <h2>Today's Progress</h2>
+                    </div>
+
+                    <span id="progressPercent" class="percentage">
+                        0%
+                    </span>
+
+                </div>
+
+                <div class="progress-bar">
+                    <div id="progressFill"></div>
+                </div>
+
+                <p id="progressText">
+                    Complete your first task to start your progress.
+                </p>
+
+            </div>
+
+
+            <!-- NOTE -->
+            <div class="card note-card" id="note">
+
+                <p class="small-text">QUICK NOTE</p>
+                <h2>Study Reminder</h2>
+
+                <textarea
+                    id="noteInput"
+                    placeholder="Write something you don't want to forget..."
+                ></textarea>
+
+                <button id="saveNoteBtn" class="primary-btn">
+                    Save Note
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <footer>
+            <p>StudyFlow • Built for focused learning</p>
+        </footer>
+
+    </main>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
