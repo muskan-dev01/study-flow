@@ -1,0 +1,11 @@
+{
+    "name": "StudyFlow - Student Productivity",
+    "short_name": "StudyFlow",
+    "description": "A professional productivity app for students to manage tasks, subjects, notes and focus sessions.",
+    "start_url": "./",
+    "display": "standalone",
+    "background_color": "#0b0712",
+    "theme_color": "#a855f7",
+    "orientation": "portrait-primary",
+    "icons": []
+}

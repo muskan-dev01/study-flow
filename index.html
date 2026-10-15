@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="theme-color" content="#a855f7">
+    <link rel="manifest" href="manifest.json">
     <title>StudyFlow | Student Productivity Dashboard</title>
 
     <link rel="stylesheet" href="style.css">
@@ -12,7 +13,141 @@
 
 <body>
 
-<div class="app">
+    <!-- AUTH SCREEN -->
+<div id="authScreen" class="auth-screen" style="display: flex;">
+
+    <div class="auth-card">
+
+        <div class="auth-logo">
+            Study<span>Flow</span>
+        </div>
+
+        <p class="auth-subtitle">
+            Your personal student productivity space
+        </p>
+
+        <!-- LOGIN -->
+        <div id="loginForm">
+
+            <h2>Welcome Back 👋</h2>
+
+            <p class="auth-text">
+                Login to continue your studies.
+            </p>
+
+            <input
+                type="email"
+                id="loginEmail"
+                placeholder="Email address"
+            >
+            <div class="password-wrapper">
+
+            <input
+                type="password"
+                id="loginPassword"
+                placeholder="Password"
+    >
+
+            <button
+                 type="button"
+                class="password-toggle"
+                id="loginPasswordToggle"
+                aria-label="Show password"
+    >
+           👁️
+        </button>
+
+    </div>            
+
+            <button id="loginBtn" class="auth-btn">
+                Login
+            </button>
+
+            <p id="loginMessage" class="auth-message"></p>
+
+            <p class="switch-auth">
+                Don't have an account?
+                <button id="showSignupBtn">
+                    Create Account
+                </button>
+            </p>
+
+        </div>
+
+
+        <!-- SIGN UP -->
+        <div id="signupForm" class="hidden">
+
+            <h2>Create Account ✨</h2>
+
+            <p class="auth-text">
+                Start organizing your study life.
+            </p>
+
+            <input
+                type="email"
+                id="signupEmail"
+                placeholder="Email address"
+            >
+
+            <div class="password-wrapper">
+
+    <input
+        type="password"
+        id="signupPassword"
+        placeholder="Create password"
+    >
+
+    <button
+        type="button"
+        class="password-toggle"
+        id="signupPasswordToggle"
+        aria-label="Show password"
+    >
+        👁️
+    </button>
+
+</div>
+
+            <div class="password-wrapper">
+
+    <input
+        type="password"
+        id="confirmPassword"
+        placeholder="Confirm password"
+    >
+
+    <button
+        type="button"
+        class="password-toggle"
+        id="confirmPasswordToggle"
+        aria-label="Show password"
+    >
+        👁️
+    </button>
+
+</div>
+
+            <button id="signupBtn" class="auth-btn">
+                Create Account
+            </button>
+
+            <p id="signupMessage" class="auth-message"></p>
+
+            <p class="switch-auth">
+                Already have an account?
+                <button id="showLoginBtn">
+                    Login
+                </button>
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="app" id="app" style="display: none;">
 
     <!-- SIDEBAR -->
     <aside class="sidebar">
@@ -30,6 +165,9 @@
             <a href="#timer">◷ <span>Focus Timer</span></a>
             <a href="#progress">◉ <span>Progress</span></a>
             <a href="#note">✎ <span>Notes</span></a>
+            <button id="logoutBtn" class="logout-btn">
+            🚪 Logout
+            </button>
         </nav>
 
         <div class="sidebar-bottom">
@@ -41,7 +179,7 @@
 
     <!-- MAIN -->
     <main class="main-content" id="dashboard">
-
+ 
         <!-- TOPBAR -->
         <header class="topbar">
 
@@ -238,7 +376,7 @@
 </div>
 
 
-<script src="script.js"></script>
+<script type="module" src="script.js"></script>
 
 </body>
 </html>
